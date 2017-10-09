@@ -1,0 +1,21 @@
+{
+  "name": "node-sort-json",
+  "version": "1.0.0",
+  "description": "Sort JSON",
+  "main": "sort.js",
+  "scripts": {
+    "start": "node ./sort.js",
+    "example": "node ./sort.js -f ./test.json -i joe"
+  },
+  "repository": "https://github.com/ronniechong/node-sort-json.git",
+  "author": "Ronnie Chong <hello@ronniechong.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "chalk": "^2.1.0",
+    "jsonfile": "^4.0.0",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "sort-json": "^1.5.2"
+  }
+}
