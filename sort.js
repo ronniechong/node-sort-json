@@ -1,5 +1,7 @@
+'use strict'
+
 /**
- * Sorts Json keys alphabetically
+ * Sorts JSON keys alphabetically
  *
  * Params:
  * -f absolute path to JSON file. E.g. -f path/to/file.json
@@ -28,12 +30,11 @@ const file = argv.f;
 
 // Reads Json file
 function readJsonFile() {
-  /* eslint-disable */
   console.log(chalk.blue('Sorting translation...'));
-  /* eslint-enable */
   return new Promise((resolve, reject) => {
     try {
       jsonFile.readFile(file, (err, obj) => {
+       
         if (err) {
           reject(err);
         }
@@ -74,23 +75,17 @@ function saveJsonFile(obj) {
 }
 
 function finishedTask() {
-   /* eslint-disable */
    console.log(chalk.green('Sorting translation done'));
    process.exit(0);
-   /* eslint-enable */
 }
 
 function catchError(e) {
-  /* eslint-disable */
   console.log(chalk.red(`Error: ${e}`));
   process.exit(1);
-   /* eslint-enable */
 }
-
 
 readJsonFile()
   .then(sortTranslations)
   .then(saveJsonFile)
   .then(finishedTask)
-  .catch(catchError);
-
+  .catch(catchError); 
